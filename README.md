@@ -47,7 +47,22 @@ node tools/generate-qr.js "https://<votre-compte>.github.io/qrcode-redirection-a
 ```
 
 Cela crée un fichier `qr-code.png` (1000x1000px, correction d'erreur élevée,
-adapté à l'impression) qui encode l'URL de la page de redirection.
+adapté à l'impression) qui encode l'URL de la page de redirection, avec le
+logo Emmaüs Habitat ([`assets/logo.png`](assets/logo.png)) incrusté au centre.
+
+Le niveau de correction d'erreur utilisé (`H`) tolère jusqu'à ~30% de la
+surface du QR code masquée/endommagée ; le logo n'en occupe ici qu'environ
+7%, ce qui laisse une large marge de sécurité pour le scan.
+
+Pour utiliser un autre logo ou générer un QR code sans logo :
+
+```bash
+# avec un autre logo
+node tools/generate-qr.js "<url>" qr-code.png chemin/vers/autre-logo.png
+
+# sans logo (chemin de logo inexistant)
+node tools/generate-qr.js "<url>" qr-code.png aucun-logo.png
+```
 
 ## 3. Modifier les destinations
 
