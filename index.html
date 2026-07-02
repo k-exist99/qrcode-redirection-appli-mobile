@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmaüs Habitat - Redirection</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #ffffff;
+      color: #333333;
+      text-align: center;
+    }
+    .message {
+      padding: 24px;
+    }
+    a {
+      color: #0078FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <p>Redirection en cours...</p>
+    <noscript>
+      <p>
+        Le JavaScript est désactivé. Rendez-vous directement sur
+        <a href="https://www.emmaus-habitat.fr/">notre site</a>.
+      </p>
+    </noscript>
+  </div>
+
+  <script>
+    (function () {
+      var APP_STORE_URL = "https://apps.apple.com/fr/app/emmaus-habitat-emma/id6449939257";
+      var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=fr.emmaushabitat.aml&hl=fr";
+      var WEBSITE_URL = "https://www.emmaus-habitat.fr/";
+
+      var ua = navigator.userAgent || navigator.vendor || window.opera || "";
+
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      var isAndroid = /android/i.test(ua);
+
+      var target = WEBSITE_URL;
+      if (isIOS) {
+        target = APP_STORE_URL;
+      } else if (isAndroid) {
+        target = PLAY_STORE_URL;
+      }
+
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>

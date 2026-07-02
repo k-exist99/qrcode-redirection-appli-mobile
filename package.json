@@ -1,0 +1,12 @@
+{
+  "name": "qrcode-redirection-appli-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Page de redirection intelligente (iOS/Android/Web) + generateur de QR code",
+  "scripts": {
+    "generate-qr": "node tools/generate-qr.js"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.3"
+  }
+}
